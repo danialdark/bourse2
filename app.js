@@ -91,7 +91,7 @@ async function sendOptionsRequest(symbolConfig) {
             const sajjadResponse = await axios.get(sajjadUrl);
 
 
-            console.log(`${getResponse.data.contract.symbol.toUpperCase()} updated at ${formattedTime}`);
+            console.log(`${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);
         } else {
             console.error('OPTIONS request failed for', symbolConfig);
         }

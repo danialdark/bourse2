@@ -91,7 +91,7 @@ async function sendOptionsRequest(symbolConfig) {
             const sajjadResponse = await axios.get(sajjadUrl);
 
 
-            console.log(`${getResponse.data.contract.symbol.toUpperCase()} updated`);
+            console.log(`${getResponse.data.contract.symbol.toUpperCase()} updated at ${formattedTime}`);
         } else {
             console.error('OPTIONS request failed for', symbolConfig);
         }

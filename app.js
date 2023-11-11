@@ -87,7 +87,7 @@ async function sendOptionsRequest(symbolConfig) {
             const formattedTime = `${updatedHours}:${updatedMinutes}:${updatedSeconds}`;
 
             const sajjadUrl = `http://87.107.190.134/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
-            // console.log(sajjadUrl);
+            console.log(sajjadUrl);
             const sajjadResponse = await axios.get(sajjadUrl);
 
 

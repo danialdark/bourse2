@@ -1,14 +1,4 @@
 const axios = require('axios');
-const Redis = require('ioredis');
-// const redis = new Redis({
-
-//     host: 'localhost',
-//     port: '6379',
-//     password: '',
-//     enableCompression: true,
-// });
-
-// var pipeline = redis.pipeline();
 
 
 const headersOptions = {
@@ -26,6 +16,24 @@ const headersOptions = {
     'Sec-Fetch-Site': 'same-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
 };
+
+const OffDays = [
+    "2023-12-17"
+    , "2024-01-25"
+    , "2024-02-08"
+    , "2024-02-11"
+    , "2024-02-25"
+    , "2024-03-19"]
+
+const beforOffDays = [
+    , "2023-12-16"
+    , "2024-01-24"
+    , "2024-02-07"
+    , "2024-02-10"
+    , "2024-02-24"
+    , "2024-03-18"]
+
+
 
 const symbolConfigs = [249, 229, 235, 237, 238, 240, 242, 245, 246, 248, 228, 250, 251, 257, 259, 260, 261, 262, 263];
 var symbolVolum = {
@@ -123,12 +131,52 @@ async function sendOptionsRequest(symbolConfig) {
 
 async function fetchDataForSymbolConfigs() {
     while (true) {
-        for (const symbolConfig of symbolConfigs) {
-            await sendOptionsRequest(symbolConfig);
-            // Wait for 1 second before processing the next symbolConfig
-            await new Promise(resolve => setTimeout(resolve, 500));
+        var shouldSendData = false;
+        var date = new Date();
+
+        // Extracting time components
+        var hours = date.getUTCHours();
+        var minutes = date.getUTCMinutes();
+
+        // Adding 3 hours and 30 minutes to the date
+        date.setUTCHours(hours + 3);
+        date.setUTCMinutes(minutes + 30);
+
+        // Extracting the updated time components
+        var updatedHours = date.getUTCHours();
+        var updatedMinutes = date.getUTCMinutes();
+        var dayOfWeek = date.getUTCDay();
+        var dayOfMonth = date.getUTCDate();
+        var Month = date.getUTCMonth();
+        var year = date.getUTCFullYear();
+
+        var myMadeDate = `${year}-${Month}-${dayOfMonth}`; // Adding 1 to Month because months are zero-based in JavaScript
+
+        if (!OffDays.includes(myMadeDate) && dayOfWeek !== 5) {
+            if (!beforOffDays.includes(myMadeDate) && dayOfWeek !== 4) {
+                // Check if time is less than 5 PM and more than 10:30 AM
+                if (updatedHours < 17 && (updatedHours > 10 || (updatedHours === 10 && updatedMinutes >= 28))) {
+                    shouldSendData = true;
+                }
+            } else {
+                if (updatedHours < 15 && (updatedHours > 10 || (updatedHours === 10 && updatedMinutes >= 28))) {
+                    shouldSendData = true;
+                }
+            }
+        }
+
+
+
+        if (shouldSendData) {
+
+            for (const symbolConfig of symbolConfigs) {
+                await sendOptionsRequest(symbolConfig);
+                // Wait for 1 second before processing the next symbolConfig
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
         }
     }
+
 }
 
 fetchDataForSymbolConfigs();

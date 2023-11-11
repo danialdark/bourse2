@@ -70,12 +70,12 @@ async function sendOptionsRequest(symbolConfig) {
             const dateObject = new Date(dateString);
 
             // Extracting time components
-            const hours = dateObject.getHours();
-            const minutes = dateObject.getMinutes();
-            const seconds = dateObject.getSeconds();
+            const hours = dateObject.getUTCHours();
+            const minutes = dateObject.getUTCMinutes();
+            const seconds = dateObject.getUTCSeconds();
 
             // Formatting the time string
-            const formattedTime = `${hours}:${minutes}:${seconds}`;
+            const formattedTime = `${hours+3}:${minutes+30}:${seconds}`;
 
             console.log(formattedTime);
 

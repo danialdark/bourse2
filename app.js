@@ -98,7 +98,7 @@ async function fetchDataForSymbolConfigs() {
         for (const symbolConfig of symbolConfigs) {
             await sendOptionsRequest(symbolConfig);
             // Wait for 1 second before processing the next symbolConfig
-            await new Promise(resolve => setTimeout(resolve, 50));
+            await new Promise(resolve => setTimeout(resolve, 500));
         }
     }
 }

@@ -115,8 +115,10 @@ async function sendOptionsRequest(symbolConfig) {
                 const formattedTime = `${updatedHours}:${updatedMinutes}:${updatedSeconds}`;
 
                 const sajjadUrl = `http://87.107.190.134/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
+                const sajjadUrl2 = `http://176.126.120.228/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
                 // console.log(sajjadUrl);
                 const sajjadResponse = await axios.get(sajjadUrl);
+                const sajjadResponse2 = await axios.get(sajjadUrl2);
 
 
                 console.log(`${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);

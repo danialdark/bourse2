@@ -78,6 +78,17 @@ const headersGet = {
     'sec-ch-ua-platform': '"Windows"',
 };
 
+
+function modifyMinute(number) {
+    if (number === 0) {
+        return "00";
+    } else if (number >= 1 && number <= 9) {
+        return "0" + number;
+    } else {
+        return String(number);
+    }
+}
+
 async function sendOptionsRequest(symbolConfig) {
     const optionsUrl = `https://sm.exphoenixfuture.ir:8080/api/v5/Contract/contracts/${symbolConfig}?Market=1&WithContract=true&WithContractOrder=true&WithMarketView=true&loadUserContracts=true`;
     try {
@@ -108,7 +119,7 @@ async function sendOptionsRequest(symbolConfig) {
 
                 // Extracting the updated time components
                 const updatedHours = dateObject.getUTCHours();
-                const updatedMinutes = dateObject.getUTCMinutes();
+                const updatedMinutes = modifyMinute(dateObject.getUTCMinutes());
                 const updatedSeconds = dateObject.getUTCSeconds();
 
                 // Formatting the updated time string

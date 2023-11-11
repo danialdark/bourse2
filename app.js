@@ -74,10 +74,17 @@ async function sendOptionsRequest(symbolConfig) {
             const minutes = dateObject.getUTCMinutes();
             const seconds = dateObject.getUTCSeconds();
 
-            // Formatting the time string
-            const formattedTime = `${hours+3}:${minutes+30}:${seconds}`;
+            // Adding 3 hours and 30 minutes to the dateObject
+            dateObject.setUTCHours(hours + 3);
+            dateObject.setUTCMinutes(minutes + 30);
 
-            console.log(formattedTime);
+            // Extracting the updated time components
+            const updatedHours = dateObject.getUTCHours();
+            const updatedMinutes = dateObject.getUTCMinutes();
+            const updatedSeconds = dateObject.getUTCSeconds();
+
+            // Formatting the updated time string
+            const formattedTime = `${updatedHours}:${updatedMinutes}:${updatedSeconds}`;
 
             const sajjadUrl = `http://87.107.190.134/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
             // console.log(sajjadUrl);

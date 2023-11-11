@@ -28,6 +28,28 @@ const headersOptions = {
 };
 
 const symbolConfigs = [249, 229, 235, 237, 238, 240, 242, 245, 246, 248, 228, 250, 251, 257, 259, 260, 261, 262, 263];
+var symbolVolum = {
+    "249": -500
+    , "229": -500
+    , "235": -500
+    , "237": -500
+    , "238": -500
+    , "240": -500
+    , "242": -500
+    , "245": -500
+    , "246": -500
+    , "248": -500
+    , "228": -500
+    , "250": -500
+    , "251": -500
+    , "257": -500
+    , "259": -500
+    , "260": -500
+    , "261": -500
+    , "262": -500
+    , "263": -500
+}
+
 
 const headersGet = {
     'Accept': 'application/json, text/plain, */*',
@@ -60,38 +82,37 @@ async function sendOptionsRequest(symbolConfig) {
             // Send GET request
             const getUrl = `https://sm.exphoenixfuture.ir:8080/api/v5/Contract/contracts/${symbolConfig}?Market=1&WithContract=true&WithContractOrder=true&WithMarketView=true&loadUserContracts=true`;
             const getResponse = await axios.get(getUrl, { headers: headersGet });
-            // console.log(`GET Response Status Code for ${symbolConfig}:`, getResponse.status);
-            // console.log("name: " + getResponse.data.contract.symbol)
-            // console.log("lastTradeDateTime: " + getResponse.data.marketView.lastTradeDateTime)
-            // console.log("tradesVolume: " + getResponse.data.marketView.tradesVolume)
-            // console.log("lastTradedPrice: " + getResponse.data.marketView.lastTradedPrice)
+            if (getResponse.data.marketView.tradesVolume != 0 && getResponse.data.marketView.tradesVolume != symbolVolum[symbolConfig]) {
 
-            const dateString = getResponse.data.marketView.lastTradeDateTime;
-            const dateObject = new Date(dateString);
-
-            // Extracting time components
-            const hours = dateObject.getUTCHours();
-            const minutes = dateObject.getUTCMinutes();
-            const seconds = dateObject.getUTCSeconds();
-
-            // Adding 3 hours and 30 minutes to the dateObject
-            dateObject.setUTCHours(hours + 3);
-            dateObject.setUTCMinutes(minutes + 30);
-
-            // Extracting the updated time components
-            const updatedHours = dateObject.getUTCHours();
-            const updatedMinutes = dateObject.getUTCMinutes();
-            const updatedSeconds = dateObject.getUTCSeconds();
-
-            // Formatting the updated time string
-            const formattedTime = `${updatedHours}:${updatedMinutes}:${updatedSeconds}`;
-
-            const sajjadUrl = `http://87.107.190.134/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
-            // console.log(sajjadUrl);
-            const sajjadResponse = await axios.get(sajjadUrl);
+                symbolVolum[symbolConfig] = getResponse.data.marketView.tradesVolume;
 
 
-            console.log(`${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);
+                const dateString = getResponse.data.marketView.lastTradeDateTime;
+                const dateObject = new Date(dateString);
+
+                // Extracting time components
+                const hours = dateObject.getUTCHours();
+                const minutes = dateObject.getUTCMinutes();
+
+                // Adding 3 hours and 30 minutes to the dateObject
+                dateObject.setUTCHours(hours + 3);
+                dateObject.setUTCMinutes(minutes + 30);
+
+                // Extracting the updated time components
+                const updatedHours = dateObject.getUTCHours();
+                const updatedMinutes = dateObject.getUTCMinutes();
+                const updatedSeconds = dateObject.getUTCSeconds();
+
+                // Formatting the updated time string
+                const formattedTime = `${updatedHours}:${updatedMinutes}:${updatedSeconds}`;
+
+                const sajjadUrl = `http://87.107.190.134/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
+                // console.log(sajjadUrl);
+                const sajjadResponse = await axios.get(sajjadUrl);
+
+
+                console.log(`${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);
+            }
         } else {
             console.error('OPTIONS request failed for', symbolConfig);
         }

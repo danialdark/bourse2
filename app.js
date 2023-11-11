@@ -120,7 +120,7 @@ async function sendOptionsRequest(symbolConfig) {
                 // Extracting the updated time components
                 const updatedHours = dateObject.getUTCHours();
                 const updatedMinutes = modifyMinute(dateObject.getUTCMinutes());
-                const updatedSeconds = dateObject.getUTCSeconds();
+                const updatedSeconds = modifyMinute(dateObject.getUTCSeconds());
 
                 // Formatting the updated time string
                 const formattedTime = `${updatedHours}:${updatedMinutes}:${updatedSeconds}`;

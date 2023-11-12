@@ -17,6 +17,25 @@ const headersOptions = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
 };
 
+const headersGet = {
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Connection': 'keep-alive',
+    'Cookie': 'cookiesession1=678B28F55CE1E00A1EBBCB16AF79AD3A; 71632bf0-abfd-4175-be7f-6470474d8e57-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiN2RhMzVahMWMtMmQzYS00ZTgzLTljODMtYjRmZGQ0Y2VkNjliIiwiZXhwIjoxNjk5ODE1Mzc4LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.zOFqUC41kjkvhUZqB00P02ptRAdqee3y_S7v5dDoQvg; ClientId=19e7a82d-6988-4cfb-9f80-85bb96047e7d; 19e7a82d-6988-4cfb-9f80-85bb96047e7d-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiM2EyNzAwODYtZjBhNC00ZTViLThjYTktNzIwYzgxZTYxZGQ2IiwiZXhwIjoxNjk5ODE3MDEyLCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.Rd6UbtAg7Ih_zEIlAf_fr26Jqc1onvRQ3rp7e04KZj8',
+    'Host': 'sm.exphoenixfuture.ir:8080',
+    'Origin': 'https://sm.exphoenixfuture.ir',
+    'Referer': 'https://sm.exphoenixfuture.ir/',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-site',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+    'clientId': '19e7a82d-6988-4cfb-9f80-85bb96047e7d',
+    'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+};
+
 const OffDays = [
     "2023-12-17"
     , "2024-01-25"
@@ -35,7 +54,8 @@ const beforOffDays = [
 
 
 
-const symbolConfigs = [249, 229, 235, 237, 238, 240, 242, 245, 246, 248, 228, 250, 251, 257, 259, 260, 261, 262, 263];
+    const symbolConfigs = [249, 229, 235, 237, 238, 240, 242, 245, 246, 248, 228, 250, 251, 257, 259, 260, 261, 262, 263];
+
 var symbolVolum = {
     "249": -500
     , "229": -500
@@ -59,24 +79,7 @@ var symbolVolum = {
 }
 
 
-const headersGet = {
-    'Accept': 'application/json, text/plain, */*',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Connection': 'keep-alive',
-    'Cookie': 'cookiesession1=678B28F55CE1E00A1EBBCB16AF79AD3A; ClientId=6a423320-3782-475c-a0b3-b4f45919a4cd; 6a423320-3782-475c-a0b3-b4f45919a4cd-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiOGNhNmE4NDctMDliMS00ZTk0LTlmMTgtNzYwZTczNTg3YjNjIiwiZXhwIjoxNjk5NzMxNTg1LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.hKJ3-hHW8nIeAdM3kOCPffA6XLDvElPZoCzw5CronDc',
-    'Host': 'sm.exphoenixfuture.ir:8080',
-    'Origin': 'https://sm.exphoenixfuture.ir',
-    'Referer': 'https://sm.exphoenixfuture.ir/',
-    'Sec-Fetch-Dest': 'empty',
-    'Sec-Fetch-Mode': 'cors',
-    'Sec-Fetch-Site': 'same-site',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-    'clientId': '6a423320-3782-475c-a0b3-b4f45919a4cd',
-    'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-};
+
 
 
 function modifyMinute(number) {

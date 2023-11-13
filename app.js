@@ -14,7 +14,7 @@ const headersOptions = {
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
 };
 
 const headersGet = {
@@ -22,7 +22,7 @@ const headersGet = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
-    'Cookie': 'cookiesession1=678B28F55CE1E00A1EBBCB16AF79AD3A; 71632bf0-abfd-4175-be7f-6470474d8e57-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiN2RhMzVahMWMtMmQzYS00ZTgzLTljODMtYjRmZGQ0Y2VkNjliIiwiZXhwIjoxNjk5ODE1Mzc4LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.zOFqUC41kjkvhUZqB00P02ptRAdqee3y_S7v5dDoQvg; ClientId=19e7a82d-6988-4cfb-9f80-85bb96047e7d; 19e7a82d-6988-4cfb-9f80-85bb96047e7d-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiM2EyNzAwODYtZjBhNC00ZTViLThjYTktNzIwYzgxZTYxZGQ2IiwiZXhwIjoxNjk5ODE3MDEyLCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.Rd6UbtAg7Ih_zEIlAf_fr26Jqc1onvRQ3rp7e04KZj8',
+    'Cookie': 'cookiesession1=678B28F55CE1E00A1EBBCB16AF79AD3A; ClientId=825040df-70e3-4436-afe3-001935f54dac; 825040df-70e3-4436-afe3-001935f54dac-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiN2FhNTBlMGQtMGE4Yy00ZDZhLWE0MzMtNDQ5YzA5OWMzODMzIiwiZXhwIjoxNjk5OTAyNTQ4LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.aO9d48C_spgdQaVvqB-55ploQb0az0ilR9y6n6YUZB4',
     'Host': 'sm.exphoenixfuture.ir:8080',
     'Origin': 'https://sm.exphoenixfuture.ir',
     'Referer': 'https://sm.exphoenixfuture.ir/',
@@ -30,10 +30,10 @@ const headersGet = {
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-    'clientId': '19e7a82d-6988-4cfb-9f80-85bb96047e7d',
+    'clientId': '825040df-70e3-4436-afe3-001935f54dac',
     'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
     'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
+    'sec-ch-ua-platform': '"Windows"'
 };
 
 const OffDays = [
@@ -54,7 +54,7 @@ const beforOffDays = [
 
 
 
-    const symbolConfigs = [249, 229, 235, 237, 238, 240, 242, 245, 246, 248, 228, 250, 251, 257, 259, 260, 261, 262, 263];
+const symbolConfigs = [249, 229, 235, 237, 238, 240, 242, 245, 246, 248, 228, 250, 251, 257, 259, 260, 261, 262, 263];
 
 var symbolVolum = {
     "249": -500

@@ -22,7 +22,7 @@ const headersGet = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
-    'Cookie': 'cookiesession1=678B28F55CE1E00A1EBBCB16AF79AD3A; 825040df-70e3-4436-afe3-001935f54dac-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiN2FhNTBlMGQtMGE4Yy00ZDZhLWE0MzMtNDQ5YzA5OWMzODMzIiwiZXhwIjoxNjk5OTAyNTQ4LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.aO9d48C_spgdQaVvqB-55ploQb0az0ilR9y6n6YUZB4; ClientId=d30af73c-1c91-4dbb-80b3-86919fa8bc50; d30af73c-1c91-4dbb-80b3-86919fa8bc50-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiZGI3ZjQyYzItZTYzMS00N2MxLWEwOTYtYzM3OWM2ZTIzNWNlIiwiZXhwIjoxNjk5OTg1NDk1LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.WtudQ-lVdsr7JGsTyxdod8Gv7PSIhUvfm9rGsAda2ko',
+    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=3d485a71-1262-4ad7-b238-59363dc66094; 3d485a71-1262-4ad7-b238-59363dc66094-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMDAwMTMwNzYiLCJjdXN0b21lci1pZCI6IjIwMDAxMzA3NiIsInVzZXItaWQiOiI1NyIsIm5hdGlvbmFsLWlkIjoiMjI5ODY1Nzg2NiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImN1c3RvbWVyIiwianRpIjoiZjExMzkyMDEtMWI2Ni00ZjdmLTliNWItZGMyMDBjMDQ3ODIwIiwiZXhwIjoxNzAwMDA0NDA2LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.zFNkD0CWFSnmCdlyFhn960xcGBR4OJIdQV6DXVy_nxU',
     'Host': 'sm.exphoenixfuture.ir:8080',
     'Origin': 'https://sm.exphoenixfuture.ir',
     'Referer': 'https://sm.exphoenixfuture.ir/',
@@ -30,11 +30,11 @@ const headersGet = {
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-    'clientId': 'd30af73c-1c91-4dbb-80b3-86919fa8bc50',
+    'clientId': '3d485a71-1262-4ad7-b238-59363dc66094',
     'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
     'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-};
+    'sec-ch-ua-platform': '"Windows"'
+  };
 
 const OffDays = [
     "2023-12-17"

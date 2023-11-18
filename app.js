@@ -22,7 +22,7 @@ const headersGet = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
-    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=1dba0aad-6311-4b3f-87ba-7f29cb888e52; 1dba0aad-6311-4b3f-87ba-7f29cb888e52-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjdXN0b21lciIsInN1YiI6IjIwMDAxMzA3NiIsImp0aSI6IjBmNTI0MjMzLTI2ZTUtNGNmNi05ZDhiLTE3ZTEwZDk3OTIyMiIsImN1c3RvbWVyLWlkIjoiMjAwMDEzMDc2IiwidXNlci1pZCI6IjU3IiwibmF0aW9uYWwtaWQiOiIyMjk4NjU3ODY2IiwiZXhwIjoxNzAwMTYwNTM5LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.QS4ftl9a_PSn5MPLpbOCpKrClQigfViwI0_IvZ-V9QA',
+    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=dc83972c-eac2-48c3-adbd-c2307f98597d; dc83972c-eac2-48c3-adbd-c2307f98597d-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjdXN0b21lciIsInN1YiI6IjIwMDAxMzA3NiIsImp0aSI6IjgxNzQ3ZTdlLWFjY2MtNDdjYy04YWI4LTgxZWJjNGIwMDEwYSIsImN1c3RvbWVyLWlkIjoiMjAwMDEzMDc2IiwidXNlci1pZCI6IjU3IiwibmF0aW9uYWwtaWQiOiIyMjk4NjU3ODY2IiwiZXhwIjoxNzAwMzMzMjkxLCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.NDANyQXDxJfpIeq0Fy-IBHOwq5dZOcBtK1nR-t9WVUA',
     'Host': 'sm.exphoenixfuture.ir:8080',
     'Origin': 'https://sm.exphoenixfuture.ir',
     'Referer': 'https://sm.exphoenixfuture.ir/',
@@ -30,7 +30,7 @@ const headersGet = {
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-    'clientId': '1dba0aad-6311-4b3f-87ba-7f29cb888e52',
+    'clientId': 'dc83972c-eac2-48c3-adbd-c2307f98597d',
     'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"'

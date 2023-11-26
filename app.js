@@ -22,7 +22,7 @@ const headersGet = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
-    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=6f22917d-27d2-40c6-88e1-96ad98e1ab4b; 6f22917d-27d2-40c6-88e1-96ad98e1ab4b-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjdXN0b21lciIsInN1YiI6IjIwMDAxMzA3NiIsImp0aSI6ImRmOTY5OTJkLTEzZWYtNDVjYi04YzI1LTFiZTBlYWMzYmJmNyIsImN1c3RvbWVyLWlkIjoiMjAwMDEzMDc2IiwidXNlci1pZCI6IjU3IiwibmF0aW9uYWwtaWQiOiIyMjk4NjU3ODY2IiwiZXhwIjoxNzAwOTM2OTc2LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.ynWBeibyykbpHTvcHHUap84ObdM6-ZexfOWRQdDQ8zI',
+    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=fc8c7092-259f-4e2d-84c4-282b919360ec; fc8c7092-259f-4e2d-84c4-282b919360ec-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjdXN0b21lciIsInN1YiI6IjIwMDAxMzA3NiIsImp0aSI6IjQ3MTJiYmFkLTkwZjEtNDZmZC04NzY2LTQ0OGQxNDhkMWE5MiIsImN1c3RvbWVyLWlkIjoiMjAwMDEzMDc2IiwidXNlci1pZCI6IjU3IiwibmF0aW9uYWwtaWQiOiIyMjk4NjU3ODY2IiwiZXhwIjoxNzAxMDIyNTU4LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.G2hGUZ3bYQ8Ahpi4-Dw_dcOV8kSSGOKa1eX0w3zQNxE',
     'Host': 'sm.exphoenixfuture.ir:8080',
     'Origin': 'https://sm.exphoenixfuture.ir',
     'Referer': 'https://sm.exphoenixfuture.ir/',
@@ -30,7 +30,7 @@ const headersGet = {
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-    'clientId': '6f22917d-27d2-40c6-88e1-96ad98e1ab4b',
+    'clientId': 'fc8c7092-259f-4e2d-84c4-282b919360ec',
     'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"'
@@ -54,7 +54,7 @@ const beforOffDays = [
 
 
 
-const symbolConfigs = [249, 229, 237, 238, 240, 242, 246, 248, 228, 250, 251, 257, 259, 260, 262, 263];
+const symbolConfigs = [249, 229, 237, 238, 240, 242, 246, 248, 228, 250, 251, 257, 259, 260, 262, 263,264];
 
 var symbolVolum = {
     "249": -500

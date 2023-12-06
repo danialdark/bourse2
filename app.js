@@ -22,7 +22,7 @@ const headersGet = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
-    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=3d543121-f1b8-4a2c-ae25-3f25c25be79d; 3d543121-f1b8-4a2c-ae25-3f25c25be79d-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjdXN0b21lciIsInN1YiI6IjIwMDAxMzA3NiIsImp0aSI6IjIxZTFlYWE5LWZiMTctNGRlZS04Y2RmLWNlOWVkMTZmMTRmNyIsImN1c3RvbWVyLWlkIjoiMjAwMDEzMDc2IiwidXNlci1pZCI6IjU3IiwibmF0aW9uYWwtaWQiOiIyMjk4NjU3ODY2IiwiZXhwIjoxNzAxNzk4NTU4LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.cUPSw5qjJPjcp-TZi_YI8fjPjcwcaCvBqH1VhnQHmUI',
+    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=0d53ef40-3293-40a6-b414-a5d26bdc01a6; 0d53ef40-3293-40a6-b414-a5d26bdc01a6-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjdXN0b21lciIsInN1YiI6IjIwMDAxMzA3NiIsImp0aSI6ImRkYjg5Mjk4LTA2M2QtNGUxOC05ZTAxLTk0NzMxZmQyOWZiZiIsImN1c3RvbWVyLWlkIjoiMjAwMDEzMDc2IiwidXNlci1pZCI6IjU3IiwibmF0aW9uYWwtaWQiOiIyMjk4NjU3ODY2IiwiZXhwIjoxNzAxODg1NTAwLCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.02reL47WlGw0Ng2A6N9rEIq2HZFOs0H150t5z5b4qJo',
     'Host': 'sm.exphoenixfuture.ir:8080',
     'Origin': 'https://sm.exphoenixfuture.ir',
     'Referer': 'https://sm.exphoenixfuture.ir/',
@@ -30,7 +30,7 @@ const headersGet = {
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-    'clientId': '3d543121-f1b8-4a2c-ae25-3f25c25be79d',
+    'clientId': '0d53ef40-3293-40a6-b414-a5d26bdc01a6',
     'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"'
@@ -54,7 +54,7 @@ const beforOffDays = [
 
 
 
-const symbolConfigs = [249, 229, 237, 238, 240, 242, 246, 248, 228, 250, 251, 257, 259, 260, 262, 263,264,265,266,267,269];
+const symbolConfigs = [249, 229, 237, 238, 240, 242, 246, 248, 228, 250, 251, 257, 259, 260, 262, 263,264,265,266,267,268,269];
 
 var symbolVolum = {
     "249": -500
@@ -180,7 +180,7 @@ async function fetchDataForSymbolConfigs() {
                 }
             }
         }
-        // shouldSendData = true;
+        shouldSendData = true;
 
 
 

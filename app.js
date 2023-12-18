@@ -22,7 +22,7 @@ const headersGet = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
-    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=448bd3fa-fea5-45f0-924f-bfee8d33de91; 448bd3fa-fea5-45f0-924f-bfee8d33de91-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjdXN0b21lciIsInN1YiI6IjIwMDAxMzA3NiIsImp0aSI6IjI3MGQ3ZWJiLTk3OTUtNGQxMi1hMWFkLWZhMmRlYmYwOWUwZCIsImN1c3RvbWVyLWlkIjoiMjAwMDEzMDc2IiwidXNlci1pZCI6IjU3IiwibmF0aW9uYWwtaWQiOiIyMjk4NjU3ODY2IiwiZXhwIjoxNzAyNzUyMzIxLCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.8bs5w7zdOsjxQNieJsb877dbYN0t7rSRY4zL1EAcv0g',
+    'Cookie': 'cookiesession1=678B28F25E2958B5FB0D2879D40E15CA; ClientId=e333e65c-60bd-4f06-bbe6-e1a7f36f8363; e333e65c-60bd-4f06-bbe6-e1a7f36f8363-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjdXN0b21lciIsInN1YiI6IjIwMDAxMzA3NiIsImp0aSI6IjEwZjZlZjk0LWZiMmMtNDJjOC1iNjMwLWUxYzAzMjU1NmI5OSIsImN1c3RvbWVyLWlkIjoiMjAwMDEzMDc2IiwidXNlci1pZCI6IjU3IiwibmF0aW9uYWwtaWQiOiIyMjk4NjU3ODY2IiwiZXhwIjoxNzAyOTIwMzA5LCJpc3MiOiJTYWhyYUFUSSIsImF1ZCI6IlNhaHJhQVRJIn0.ZP-FOobb70qVuHbion05wKksT9_7zFg9sKm3Iz8glrQ',
     'Host': 'sm.exphoenixfuture.ir:8080',
     'Origin': 'https://sm.exphoenixfuture.ir',
     'Referer': 'https://sm.exphoenixfuture.ir/',
@@ -30,7 +30,7 @@ const headersGet = {
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
-    'clientId': '448bd3fa-fea5-45f0-924f-bfee8d33de91',
+    'clientId': 'e333e65c-60bd-4f06-bbe6-e1a7f36f8363',
     'sec-ch-ua': '"Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"'
@@ -54,7 +54,7 @@ const beforOffDays = [
 
 
 
-const symbolConfigs = [249, 229, 237, 238, 242, 246, 248, 250, 251, 259, 260, 262, 263, 264, 265, 266, 267, 268, 269,270];
+const symbolConfigs = [249, 229, 237, 238, 242, 246, 248, 250, 251, 259, 260, 262, 263, 264, 265, 266, 267, 268, 269, 270];
 
 var symbolVolum = {
     "249": -500
@@ -124,18 +124,21 @@ async function sendOptionsRequest(symbolConfig) {
                 const updatedHours = dateObject.getUTCHours();
                 const updatedMinutes = modifyMinute(dateObject.getUTCMinutes());
                 const updatedSeconds = modifyMinute(dateObject.getUTCSeconds());
-
+                console.log(updatedHours)
                 // Formatting the updated time string
                 const formattedTime = `${updatedHours}:${updatedMinutes}:${updatedSeconds}`;
+                if (updatedHours >= 10 && updatedHours <= 17) {
+                    const sajjadUrl = `http://87.107.190.134/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
+                    const sajjadUrl2 = `http://176.126.120.228/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
+                    // console.log(sajjadUrl);
+                    await axios.get(sajjadUrl);
+                    await axios.get(sajjadUrl2);
 
-                const sajjadUrl = `http://87.107.190.134/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
-                const sajjadUrl2 = `http://176.126.120.228/bk/inputS.php?data=${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}&token=tfu37Y5fluYi6do03Ddl12w`
-                // console.log(sajjadUrl);
-                const sajjadResponse = await axios.get(sajjadUrl);
-                const sajjadResponse2 = await axios.get(sajjadUrl2);
+                    console.log(`${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);
+                } else {
+                    console.log(`Blocked For  ${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);
 
-
-                console.log(`${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);
+                }
             }
         } else {
             console.error('OPTIONS request failed for', symbolConfig);

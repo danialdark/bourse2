@@ -94,8 +94,8 @@ var symbolVolum = {
 }
 
 async function initStatus() {
-    await pipeline.set('status', 'ok', 'EX', 720).exec();
-
+    await pipeline.set('status', 'ok').exec();
+    console.log("init finished")
 }
 
 

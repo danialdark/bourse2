@@ -197,7 +197,7 @@ async function fetchDataForSymbolConfigs() {
                 }
             }
         }
-        shouldSendData = true;
+        // shouldSendData = true;
 
 
 

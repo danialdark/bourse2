@@ -1,8 +1,5 @@
 const axios = require('axios');
-const TelegramBot = require('node-telegram-bot-api');
-const bot = new TelegramBot('6372105023:AAENq18ynY1CIpQI7QCUZRkT9UD3aL2AWNE', { polling: true });
-const channelUsername = '@crbdsm';
-const errorChanel = '@errocrbdsm';
+
 
 const headersOptions = {
     'Accept': '*/*',
@@ -82,13 +79,6 @@ var symbolVolum = {
 }
 
 
-async function sendMessage(channelUsername, message) {
-    // Send a message to the channel
-    await bot.sendMessage(channelUsername, message)
-
-}
-
-sendMessage(channelUsername, "❌❌❌❌❌ Bourse is deactive ❌❌❌❌❌")
 
 
 
@@ -151,13 +141,9 @@ async function sendOptionsRequest(symbolConfig) {
                 }
             }
         } else {
-            sendMessage(channelUsername, "❌❌❌❌❌ Bourse is deactive ❌❌❌❌❌")
-
             console.error('OPTIONS request failed for', symbolConfig);
         }
     } catch (error) {
-        sendMessage(channelUsername, "❌❌❌❌❌ Bourse is deactive ❌❌❌❌❌")
-
         console.error(`Error for symbolConfig ${symbolConfig}:`, error.message);
     }
 }

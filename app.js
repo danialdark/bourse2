@@ -5,7 +5,7 @@ const Redis = require('ioredis');
 const redis = new Redis({
     host: '127.0.0.1',
     port: '6379',
-    password: '',
+    password: 'D@n!@l12098',
     enableCompression: true,
 });
 // Creating a pipeline
@@ -93,7 +93,10 @@ var symbolVolum = {
     , "263": -500
 }
 
+async function initStatus() {
+    await pipeline.set('status', 'ok', 'EX', 720).exec();
 
+}
 
 
 
@@ -223,6 +226,8 @@ async function fetchDataForSymbolConfigs() {
     }
 
 }
+
+initStatus();
 
 fetchDataForSymbolConfigs();
 

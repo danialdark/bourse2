@@ -1,5 +1,20 @@
 const axios = require('axios');
 
+const Redis = require('ioredis');
+
+const redis = new Redis({
+    host: '127.0.0.1',
+    port: '6379',
+    password: '',
+    enableCompression: true,
+});
+// Creating a pipeline
+const pipeline = redis.pipeline();
+
+// Adding the set operation to the pipeline
+
+
+
 
 const headersOptions = {
     'Accept': '*/*',
@@ -134,21 +149,30 @@ async function sendOptionsRequest(symbolConfig) {
                     await axios.get(sajjadUrl);
                     await axios.get(sajjadUrl2);
 
+                    await pipeline.set('status', 'ok', 'EX', 720).exec();
+
                     console.log(`${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);
                 } else {
+                    await pipeline.set('status', 'ok', 'EX', 720).exec();
+
                     console.log(`Blocked For  ${getResponse.data.contract.symbol.toUpperCase()}:|:${getResponse.data.marketView.lastTradedPrice.toLocaleString()}:|:${formattedTime}:|:${getResponse.data.marketView.tradesVolume.toLocaleString()}`);
 
                 }
             }
         } else {
             console.error('OPTIONS request failed for', symbolConfig);
+            await pipeline.del('status').exec();
+
         }
     } catch (error) {
         console.error(`Error for symbolConfig ${symbolConfig}:`, error.message);
+        await pipeline.del('status').exec();
+
     }
 }
 
 async function fetchDataForSymbolConfigs() {
+
     while (true) {
         var shouldSendData = false;
         var date = new Date();
